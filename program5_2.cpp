@@ -1,82 +1,68 @@
-// Program 5.2: Constructor Overloading Demo
-// Author: Roll No 24B11AI136
-// Demonstrates constructor overloading with different parameter lists
+// Program 5.2: Constructor Overloading
+// Author: Roll No 24B11AI450
 
 #include <iostream>
 using namespace std;
 
-class Rectangle {
+class rectangle {
 private:
-    int length;
-    int width;
-    
+    int len;
+    int wid;
+
 public:
-    // Default Constructor
-    Rectangle() {
-        length = 0;
-        width = 0;
-        cout << "Default constructor called!" << endl;
+    rectangle() {
+        len = 0;
+        wid = 0;
+        cout << "default call" << endl;
     }
-    
-    // Constructor for Square (one parameter)
-    Rectangle(int side) {
-        length = side;
-        width = side;
-        cout << "Square constructor called!" << endl;
+
+    rectangle(int side) {
+        len = side;
+        wid = side;
+        cout << "square call" << endl;
     }
-    
-    // Constructor for Rectangle (two parameters)
-    Rectangle(int l, int w) {
-        length = l;
-        width = w;
-        cout << "Rectangle constructor called!" << endl;
+
+    rectangle(int l, int w) {
+        len = l;
+        wid = w;
+        cout << "rectangle call" << endl;
     }
-    
+
     void display() {
-        cout << "Length: " << length << ", Width: " << width << endl;
+        cout << "len: " << len << ", wid: " << wid << endl;
     }
 };
 
 int main() {
     int choice;
-    
+
     cout << "Choose how to create the rectangle:" << endl;
-    cout << "1. Default (0x0)" << endl;
-    cout << "2. Square (one side)" << endl;
-    cout << "3. Rectangle (length & width)" << endl;
-    cout << "Enter choice: ";
+    cout << "1. default" << endl;
+    cout << "2. square" << endl;
+    cout << "3. rectangle (l and w)" << endl;
+    cout << "enter choice: ";
     cin >> choice;
-    
+
     if (choice == 1) {
-        Rectangle r1;
+        rectangle r1;
         r1.display();
     }
     else if (choice == 2) {
         int side;
-        cout << "Enter side length: ";
+        cout << "enter len: ";
         cin >> side;
-        Rectangle r2(side);
+        rectangle r2(side);
         r2.display();
     }
     else if (choice == 3) {
         int l, w;
-        cout << "Enter length: ";
+        cout << "enter len: ";
         cin >> l;
-        cout << "Enter width: ";
+        cout << "enter wid: ";
         cin >> w;
-        Rectangle r3(l, w);
+        rectangle r3(l, w);
         r3.display();
     }
-    else {
-        cout << "Invalid choice!" << endl;
-    }
-    
+
     return 0;
 }
-
-/*
-Sample Outputs:
-Choice 1: Default constructor called! Length: 0, Width: 0
-Choice 2: Square constructor called! Length: 4, Width: 4  
-Choice 3: Rectangle constructor called! Length: 18, Width: 6
-*/

@@ -1,6 +1,5 @@
 // Program 8.2: Virtual Base Classes
-// Author: Roll No 24B11AI136
-// Demonstrates virtual base classes to resolve diamond problem in multiple inheritance
+// Author: Roll No 24B11AI450
 
 #include <iostream>
 using namespace std;
@@ -8,82 +7,54 @@ using namespace std;
 class A {
 public:
     A() {
-        cout << "A constructor" << endl;
+        cout << "A is constructor" << endl;
     }
-    
+
     ~A() {
-        cout << "A destructor" << endl;
+        cout << "A is destructor" << endl;
     }
-    
+
     void show() {
-        cout << "Hello from class A" << endl;
+        cout << "Hello from A" << endl;
     }
 };
 
-class B : public virtual A {  // Virtual inheritance
+class B : public virtual A {
 public:
     B() {
-        cout << "B constructor" << endl;
+        cout << "B is constructor" << endl;
     }
-    
+
     ~B() {
-        cout << "B destructor" << endl;
+        cout << "B is destructor" << endl;
     }
 };
 
-class C : public virtual A {  // Virtual inheritance
+class C : public virtual A {
 public:
     C() {
-        cout << "C constructor" << endl;
+        cout << "C is constructor" << endl;
     }
-    
+
     ~C() {
-        cout << "C destructor" << endl;
+        cout << "C is destructor" << endl;
     }
 };
 
 class D : public B, public C {
 public:
     D() {
-        cout << "D constructor" << endl;
+        cout << "D is constructor" << endl;
     }
-    
+
     ~D() {
-        cout << "D destructor" << endl;
+        cout << "D is destructor" << endl;
     }
 };
 
 int main() {
-    cout << "Roll No: 24B11AI136" << endl;
-    cout << "Creating object of class D:" << endl;
-    
+    cout << "Roll No:24B11AI450" << endl;
     D obj;
-    
-    cout << "\nCalling show() method:" << endl;
-    obj.show();  // No ambiguity due to virtual inheritance
-    
-    cout << "\nEnd of program:" << endl;
+    obj.show();
     return 0;
 }
-
-/*
-Sample Output:
-Roll No: 24B11AI136
-Creating object of class D:
-A constructor
-B constructor
-C constructor
-D constructor
-
-Calling show() method:
-Hello from class A
-
-End of program:
-D destructor
-C destructor
-B destructor
-A destructor
-
-Note: Virtual inheritance ensures only one copy of base class A exists,
-      preventing the diamond problem and ambiguity.
-*/

@@ -1,52 +1,33 @@
 // Program 7.2: Constructor and Destructor Order in Inheritance
-// Author: Roll No 24B11AI136
-// Demonstrates the order of constructor and destructor execution in inheritance
+// Author: Roll No 24B11AI450
 
 #include <iostream>
 using namespace std;
 
-class Parent {
+class parent {
 public:
-    Parent() {
-        cout << "Parent class constructor" << endl;
+    parent() {
+        cout << "parent class constructor" << endl;
     }
-    
-    ~Parent() {
-        cout << "Parent class destructor" << endl;
+
+    ~parent() {
+        cout << "parent class destructor" << endl;
     }
 };
 
-class Child : public Parent {
+class child : public parent {
 public:
-    Child() {
-        cout << "Child class constructor" << endl;
+    child() {
+        cout << "child class constructor" << endl;
     }
-    
-    ~Child() {
-        cout << "Child class destructor" << endl;
+
+    ~child() {
+        cout << "child class destructor" << endl;
     }
 };
 
 int main() {
-    cout << "Roll No: 24B11AI136" << endl;
-    cout << "Creating Child object..." << endl;
-    
-    Child c;  // Object creation
-    
-    cout << "End of main function" << endl;
-    return 0;  // Object destruction occurs here
+    cout << "Roll No:24B11AI450" << endl;
+    child c;
+    return 0;
 }
-
-/*
-Sample Output:
-Roll No: 24B11AI136
-Creating Child object...
-Parent class constructor
-Child class constructor
-End of main function
-Child class destructor
-Parent class destructor
-
-Note: Constructors are called from base to derived.
-      Destructors are called from derived to base.
-*/

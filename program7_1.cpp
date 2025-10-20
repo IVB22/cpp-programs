@@ -1,205 +1,159 @@
 // Program 7.1: Different Forms of Inheritance
-// Author: Roll No 24B11AI136
-// Demonstrates Single, Multiple, Multilevel, Hierarchical, and Hybrid Inheritance
+// Author: Roll No 24B11AI450
 
 #include <iostream>
 using namespace std;
 
-// ================= 1. Single Inheritance =================
-namespace SingleInheritance {
-    class Vehicle {
+void singleInheritanceDemo() {
+    class vehicle {
     public:
-        Vehicle() {
+        vehicle() {
             cout << "This is a vehicle" << endl;
         }
     };
-    
-    class Car : public Vehicle {
+
+    class car : public vehicle {
     public:
-        Car() {
+        car() {
             cout << "This vehicle is a car" << endl;
         }
     };
-    
-    void demo() {
-        cout << "=== Single Inheritance Demo ===" << endl;
-        cout << "Roll No: 24B11AI136" << endl;
-        Car obj;
-        cout << endl;
-    }
+
+    cout << "Roll No:24B11AI450" << endl;
+    car obj;
+    cout << endl;
 }
 
-// ================= 2. Multiple Inheritance =================
-namespace MultipleInheritance {
-    class LandVehicle {
+void multipleInheritanceDemo() {
+    class roadvehicle {
     public:
-        LandVehicle() {
+        roadvehicle() {
             cout << "This is a land vehicle" << endl;
         }
     };
-    
-    class WaterVehicle {
+
+    class watervehicle {
     public:
-        WaterVehicle() {
+        watervehicle() {
             cout << "This is a water vehicle" << endl;
         }
     };
-    
-    class AmphibiousVehicle : public WaterVehicle, public LandVehicle {
+
+    class ampvehicle : public watervehicle, public roadvehicle {
     public:
-        AmphibiousVehicle() {
+        ampvehicle() {
             cout << "This is both land and water vehicle" << endl;
         }
     };
-    
-    void demo() {
-        cout << "=== Multiple Inheritance Demo ===" << endl;
-        cout << "Roll No: 24B11AI136" << endl;
-        AmphibiousVehicle obj;
-        cout << endl;
-    }
+
+    cout << "Roll No:24B11AI450" << endl;
+    ampvehicle obj;
+    cout << endl;
 }
 
-// ================= 3. Multilevel Inheritance =================
-namespace MultilevelInheritance {
-    class Vehicle {
+void multilevelInheritanceDemo() {
+    class vehicle {
     public:
-        Vehicle() {
+        vehicle() {
             cout << "This is a vehicle" << endl;
         }
     };
-    
-    class FourWheeler : public Vehicle {
+
+    class fourwheeler : public vehicle {
     public:
-        FourWheeler() {
-            cout << "4 wheeler vehicle" << endl;
+        fourwheeler() {
+            cout << "Four wheels vehicles" << endl;
         }
     };
-    
-    class Car : public FourWheeler {
+
+    class car : public fourwheeler {
     public:
-        Car() {
-            cout << "This 4 wheeler vehicle is a car" << endl;
+        car() {
+            cout << "This four wheels vehicle is a car" << endl;
         }
     };
-    
-    void demo() {
-        cout << "=== Multilevel Inheritance Demo ===" << endl;
-        cout << "Roll No: 24B11AI136" << endl;
-        Car obj;
-        cout << endl;
-    }
+
+    cout << "Roll No:24B11AI450" << endl;
+    car obj;
+    cout << endl;
 }
 
-// ================= 4. Hierarchical Inheritance =================
-namespace HierarchicalInheritance {
-    class Vehicle {
+void hierarchicalInheritanceDemo() {
+    class vehicle {
     public:
-        Vehicle() {
+        vehicle() {
             cout << "This is a vehicle" << endl;
         }
     };
-    
-    class Car : public Vehicle {
+
+    class car : public vehicle {
     public:
-        Car() {
+        car() {
             cout << "This vehicle is a car" << endl;
         }
     };
-    
-    class Bus : public Vehicle {
+
+    class bus : public vehicle {
     public:
-        Bus() {
-            cout << "This vehicle is a bus" << endl;
+        bus() {
+            cout << "This vehicle is bus" << endl;
         }
     };
-    
-    void demo() {
-        cout << "=== Hierarchical Inheritance Demo ===" << endl;
-        cout << "Roll No: 24B11AI136" << endl;
-        Car obj1;
-        Bus obj2;
-        cout << endl;
-    }
+
+    cout << "Roll No:24B11AI450" << endl;
+    car obj1;
+    bus obj2;
+    cout << endl;
 }
 
-// ================= 5. Hybrid Inheritance =================
-namespace HybridInheritance {
-    class Vehicle {
+void hybridInheritanceDemo() {
+    class vehicle {
     public:
-        Vehicle() {
+        vehicle() {
             cout << "This is a vehicle" << endl;
         }
     };
-    
-    class Fare {
+
+    class fare {
     public:
-        Fare() {
+        fare() {
             cout << "Fare of a vehicle" << endl;
         }
     };
-    
-    class Car : public Vehicle {
+
+    class car : public vehicle {
     public:
-        Car() {
+        car() {
             cout << "This vehicle is a car" << endl;
         }
     };
-    
-    class Bus : public Vehicle, public Fare {
+
+    class bus : public vehicle, public fare {
     public:
-        Bus() {
+        bus() {
             cout << "This vehicle is a bus with fare" << endl;
         }
     };
-    
-    void demo() {
-        cout << "=== Hybrid Inheritance Demo ===" << endl;
-        cout << "Roll No: 24B11AI136" << endl;
-        Bus obj;
-        cout << endl;
-    }
+
+    cout << "Roll No:24B11AI450" << endl;
+    bus obj2;
 }
 
 int main() {
-    SingleInheritance::demo();
-    MultipleInheritance::demo();
-    MultilevelInheritance::demo();
-    HierarchicalInheritance::demo();
-    HybridInheritance::demo();
-    
+    cout << "=== Single Inheritance ===" << endl;
+    singleInheritanceDemo();
+
+    cout << "\n=== Multiple Inheritance ===" << endl;
+    multipleInheritanceDemo();
+
+    cout << "\n=== Multilevel Inheritance ===" << endl;
+    multilevelInheritanceDemo();
+
+    cout << "\n=== Hierarchical Inheritance ===" << endl;
+    hierarchicalInheritanceDemo();
+
+    cout << "\n=== Hybrid Inheritance ===" << endl;
+    hybridInheritanceDemo();
+
     return 0;
 }
-
-/*
-Sample Output:
-=== Single Inheritance Demo ===
-Roll No: 24B11AI136
-This is a vehicle
-This vehicle is a car
-
-=== Multiple Inheritance Demo ===
-Roll No: 24B11AI136
-This is a water vehicle
-This is a land vehicle
-This is both land and water vehicle
-
-=== Multilevel Inheritance Demo ===
-Roll No: 24B11AI136
-This is a vehicle
-4 wheeler vehicle
-This 4 wheeler vehicle is a car
-
-=== Hierarchical Inheritance Demo ===
-Roll No: 24B11AI136
-This is a vehicle
-This vehicle is a car
-This is a vehicle
-This vehicle is a bus
-
-=== Hybrid Inheritance Demo ===
-Roll No: 24B11AI136
-This is a vehicle
-Fare of a vehicle
-This vehicle is a bus with fare
-*/
